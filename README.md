@@ -1,4 +1,4 @@
-# MybatisBoost [![Build Status](https://www.travis-ci.org/zhang-rf/mybatis-boost.svg?branch=master)](https://www.travis-ci.org/zhang-rf/mybatis-boost)
+# MybatisBoost [![Build Status](https://www.travis-ci.org/zhang-rf/mybatis-boost.svg?branch=master)](https://www.travis-ci.org/zhang-rf/mybatis-boost) [![Coverage Status](https://coveralls.io/repos/github/zhang-rf/mybatis-boost/badge.svg)](https://coveralls.io/github/zhang-rf/mybatis-boost)
 
 Mybatis SQL开发神器MybatisBoost，包含通用CrudMapper、Mybatis语法增强、无感知分页、SQL指标与监控和智能Mapper（TODO）功能，使用MybatisBoost来提升开发效率，内聚SQL代码！
 
@@ -10,7 +10,7 @@ Mybatis SQL开发神器MybatisBoost，包含通用CrudMapper、Mybatis语法增�
 <dependency>
     <groupId>cn.mybatisboost</groupId>
     <artifactId>mybatis-boost-spring-boot-starter</artifactId>
-    <version>1.0.3</version>
+    <version>1.1.5</version>
 </dependency>
 ```
 
@@ -141,7 +141,7 @@ SELECT * FROM #t
 
 ### 参数语法增强
 
-参数语法增强后，简单的参数就没有必要再使用Mybatis的"#{}"语法做映射了，也没有必要编写@Param注解来声明参数名称了，MybatisBoost会自动按照参数的声明顺序做出正确的映射。
+参数语法增强后，简单的参数就没有必要再使用Mybatis的"#{}"语法做映射了，也没有必要编写@Param注解来声明参数名称了，MybatisBoost会自动按照参数的声明顺序做出正确的映射。（参数语法增强不支持嵌套属性，即不支持自动映射到对象中的属性。）
 
 ```sql
 @Update("update #t set column1 = ? where condition1 = ?")
@@ -169,4 +169,5 @@ mybatisboost.slowQueryHandler=Class<? extends BiConsumer<String, Long>> // 慢SQ
 
 ## 欢迎使用
 
+光看文档太抽象？mybatis-boost-test模块下有所有的使用case，欢迎各位检阅测试代码。
 MybatisBoost中没有你想要的功能？亦或是MybatisBoost有BUG？欢迎各位提出issues！
